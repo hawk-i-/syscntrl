@@ -15,3 +15,6 @@
 
 # VS Code config file
 .vscode/
+
+# For local dependencies
+vendor/

@@ -1,0 +1,3 @@
+package: github.com/hawk-i-/sysctrl
+import:
+- package: github.com/jinzhu/gorm
