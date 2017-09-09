@@ -2,3 +2,4 @@ package: github.com/hawk-i-/sysctrl
 import:
 - package: github.com/jinzhu/gorm
 - package: github.com/spf13/viper
+- package: github.com/lib/pq
