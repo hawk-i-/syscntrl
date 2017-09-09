@@ -1,6 +1,10 @@
-hash: 3b770162de7ee0b364ab17fc970bd8cb0d6c50197ced76560b54adc82f6542a4
-updated: 2017-09-08T00:29:37.3022125-04:00
+hash: 729eed073159e9472ab90690f7789786d0cf05303ceb7ea7b16887472e0f93cf
+updated: 2017-09-08T22:47:08.3634621-04:00
 imports:
 - name: github.com/jinzhu/gorm
   version: b1885a643b4977c9089d77eb07c0fd96591f94b8
+- name: github.com/jinzhu/inflection
+  version: 1c35d901db3da928c72a72d8458480cc9ade058f
+- name: github.com/spf13/viper
+  version: 25b30aa063fc18e48662b86996252eabdcf2f0c7
 testImports: []
