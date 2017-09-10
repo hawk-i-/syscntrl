@@ -1,8 +1,12 @@
-hash: e69fdae9b3c0ff7c7fa077a60ed78a16511ae86d5b1d2ceec9f98afae6bd56ea
-updated: 2017-09-09T16:23:41.8576341-04:00
+hash: f88d4f9a145dba9adc70f6adfe82a82011be2b2fa507968f390c2cac3846a9dd
+updated: 2017-09-10T00:39:05.2445538-04:00
 imports:
+- name: github.com/denisenkom/go-mssqldb
+  version: 84dc5e6cc4a674abe81be5bf7835f4ae3dced817
 - name: github.com/fsnotify/fsnotify
   version: 4da3e2cfbabc9f751898f250b49f2439785783a1
+- name: github.com/go-sql-driver/mysql
+  version: 26471af196a17ee75a22e6481b5a5897fb16b081
 - name: github.com/hashicorp/hcl
   version: 8f6b1344a92ff8877cf24a5de9177bf7d0a2a187
   subpackages:

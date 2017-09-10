@@ -1,5 +1,13 @@
 {
     "db": {
-        "path": ""
+        "postgres": {
+            "path": ""
+        },
+        "mysql": {
+            "path": ""
+        },
+        "mssql": {
+            "path": ""
+        }
     }
 }
