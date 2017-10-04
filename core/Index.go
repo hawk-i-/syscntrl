@@ -7,8 +7,9 @@ import (
 )
 
 type Context struct {
-	Config     *viper.Viper
-	DBProvider func() (*gorm.DB, error)
+	Config        *viper.Viper
+	DBProvider    func() (*gorm.DB, error)
+	tokenProvider gTokenProvider
 }
 
 var context Context
@@ -20,8 +21,8 @@ func InitializePackage(c Context) (err error) {
 		return
 	}
 	context = c
-	err = migrateSchema()
-
+	err = migrateSchema(c)
+	context.tokenProvider, err = initTokenProvider(c)
 	if err != nil {
 		return
 	}
@@ -30,15 +31,19 @@ func InitializePackage(c Context) (err error) {
 	return
 }
 
-func migrateSchema() (err error) {
+func IsInitialized() bool {
+	return initialized
+}
+
+func migrateSchema(context Context) (err error) {
 	db, err := context.DBProvider()
 
 	if err != nil {
 		return
 	}
 
-	// db.Model(&Task{}).Related(&Runner{})
-	db.AutoMigrate(&Runner{}, &Task{})
+
+	db.AutoMigrate(&Runner{}, &Trigger{}, &Task{})
 
 	seedData(db)
 	return
@@ -62,5 +67,26 @@ func seedData(db *gorm.DB) {
 		},
 	}
 
-	db.Create(&task)
+	task2 := Task{
+		Description: "This is sample task",
+		Name:        "SAMPLE_TASK2",
+		Runners: []Runner{
+			{
+				Name:        "SAMPLE_RUNNER2",
+				Description: "This is sample description",
+			},
+		},
+		Triggers: []Trigger{
+			{
+				Name:        "Test Trigger",
+				Description: "This is test trigger",
+			},
+		},
+		SubTasks: []Task{
+			task,
+		},
+	}
+
+
+	db.Create(&task2)
 }

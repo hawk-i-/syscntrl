@@ -6,15 +6,14 @@ import (
 )
 
 type AppContext struct {
-	 config *viper.Viper
+	config *viper.Viper
 }
 
 var Context AppContext
 
-func init () {
+func init() {
 
 }
-
 
 func main() {
 	config, err := getConfig("main")
@@ -23,12 +22,12 @@ func main() {
 		panic(err)
 	}
 
-	Context =  AppContext{
+	Context = AppContext{
 		config: config,
 	}
 
 	err = core.InitializePackage(core.Context{
-		Config: nil,
+		Config:     nil,
 		DBProvider: getDBGenerator(Context.config.Sub("db")),
 	})
 

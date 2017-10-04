@@ -1,0 +1,16 @@
+{
+  "db": {
+    "postgres": {
+      "path": ""
+    },
+    "mysql": {
+      "path": ""
+    },
+    "mssql": {
+      "path": ""
+    }
+  },
+  "security": {
+    "privateKey": "./"
+  }
+}

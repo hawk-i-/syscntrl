@@ -16,9 +16,9 @@ func getConfig(file string) (config *viper.Viper, err error) {
 
 func GetSubConfig(file string, key string) (config *viper.Viper, err error) {
 	parentConfig, err := getConfig(file)
-	 if err != nil {
-	 	return
-	 }
-	 config = parentConfig.Sub(key)
-	 return
+	if err != nil {
+		return
+	}
+	config = parentConfig.Sub(key)
+	return
 }

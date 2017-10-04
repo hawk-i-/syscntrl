@@ -21,3 +21,6 @@ vendor/
 
 # InteliJ config file
 .idea/*
+
+config/main.config.json
+debug

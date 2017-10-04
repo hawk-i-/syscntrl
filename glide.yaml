@@ -5,3 +5,9 @@ import:
 - package: github.com/lib/pq
 - package: github.com/go-sql-driver/mysql
 - package: github.com/denisenkom/go-mssqldb
+- package: github.com/gorilla/mux
+  version: ^1.5.0
+- package: github.com/justinas/alice
+  version: ^1.0.0
+- package: github.com/dgrijalva/jwt-go
+  version: ^3.0.0
